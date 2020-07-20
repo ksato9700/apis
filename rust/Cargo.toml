@@ -1,6 +1,6 @@
 [package]
 name = "apis"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Ken Sato <ksato9700@gmail.com>"]
 edition = "2018"
 build = "build.rs"
