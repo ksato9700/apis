@@ -1,6 +1,6 @@
 const grpc = require('grpc')
 const protoLoader = require('@grpc/proto-loader')
-const PROTO_PATH = __dirname + '/../v1/helloworld.proto'
+const PROTO_PATH = __dirname + '/v1/helloworld.proto'
 
 const packageDefinition = protoLoader.loadSync(
     PROTO_PATH,
@@ -12,4 +12,7 @@ const packageDefinition = protoLoader.loadSync(
         oneofs: true
     }
 );
-module.exports = grpc.loadPackageDefinition(packageDefinition).apis;
+module.exports = {
+    grpc: grpc,
+    apis: grpc.loadPackageDefinition(packageDefinition).apis,
+};
