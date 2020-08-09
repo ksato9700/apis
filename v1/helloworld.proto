@@ -9,13 +9,13 @@ service Greeter {
 message HelloRequest {
   string name = 1;
   int64 ver = 2;
-  enum BloodType {
+  enum bloodType {
     A = 0;
     B = 1;
     O = 2;
     AB = 3;
   };
-  BloodType bloodType = 3;
+  //   BloodType bloodType = 3;
 }
 
 message HelloReply { string message = 1; }
