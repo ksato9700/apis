@@ -3,14 +3,19 @@ syntax = "proto3";
 package apis;
 
 service Greeter {
-  rpc sayHello (HelloRequest) returns (HelloReply) {}
+  rpc sayHello(HelloRequest) returns (HelloReply) {}
 }
 
 message HelloRequest {
   string name = 1;
   int64 ver = 2;
+  enum BloodType {
+    A = 0;
+    B = 1;
+    O = 2;
+    AB = 3;
+  };
+  BloodType bloodType = 3;
 }
 
-message HelloReply {
-  string message = 1;
-}
+message HelloReply { string message = 1; }

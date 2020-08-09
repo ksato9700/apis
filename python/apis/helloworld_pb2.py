@@ -19,10 +19,45 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10helloworld.proto\x12\x04\x61pis\")\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03ver\x18\x02 \x01(\x03\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2=\n\x07Greeter\x12\x32\n\x08sayHello\x12\x12.apis.HelloRequest\x1a\x10.apis.HelloReply\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x10helloworld.proto\x12\x04\x61pis\"\x84\x01\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03ver\x18\x02 \x01(\x03\x12/\n\tbloodType\x18\x03 \x01(\x0e\x32\x1c.apis.HelloRequest.BloodType\"(\n\tBloodType\x12\x05\n\x01\x41\x10\x00\x12\x05\n\x01\x42\x10\x01\x12\x05\n\x01O\x10\x02\x12\x06\n\x02\x41\x42\x10\x03\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2=\n\x07Greeter\x12\x32\n\x08sayHello\x12\x12.apis.HelloRequest\x1a\x10.apis.HelloReply\"\x00\x62\x06proto3'
 )
 
 
+
+_HELLOREQUEST_BLOODTYPE = _descriptor.EnumDescriptor(
+  name='BloodType',
+  full_name='apis.HelloRequest.BloodType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='A', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='B', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='O', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='AB', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=119,
+  serialized_end=159,
+)
+_sym_db.RegisterEnumDescriptor(_HELLOREQUEST_BLOODTYPE)
 
 
 _HELLOREQUEST = _descriptor.Descriptor(
@@ -47,11 +82,19 @@ _HELLOREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='bloodType', full_name='apis.HelloRequest.bloodType', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
+    _HELLOREQUEST_BLOODTYPE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -59,8 +102,8 @@ _HELLOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26,
-  serialized_end=67,
+  serialized_start=27,
+  serialized_end=159,
 )
 
 
@@ -91,10 +134,12 @@ _HELLOREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=69,
-  serialized_end=98,
+  serialized_start=161,
+  serialized_end=190,
 )
 
+_HELLOREQUEST.fields_by_name['bloodType'].enum_type = _HELLOREQUEST_BLOODTYPE
+_HELLOREQUEST_BLOODTYPE.containing_type = _HELLOREQUEST
 DESCRIPTOR.message_types_by_name['HelloRequest'] = _HELLOREQUEST
 DESCRIPTOR.message_types_by_name['HelloReply'] = _HELLOREPLY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -122,8 +167,8 @@ _GREETER = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=100,
-  serialized_end=161,
+  serialized_start=192,
+  serialized_end=253,
   methods=[
   _descriptor.MethodDescriptor(
     name='sayHello',
