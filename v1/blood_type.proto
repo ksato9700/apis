@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package apis;
+
+enum BloodType {
+  A = 0;
+  B = 1;
+  O = 2;
+  AB = 3;
+};

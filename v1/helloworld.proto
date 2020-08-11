@@ -2,16 +2,11 @@ syntax = "proto3";
 
 package apis;
 
+import "blood_type.proto";
+
 service Greeter {
   rpc sayHello(HelloRequest) returns (HelloReply) {}
 }
-
-enum BloodType {
-  A = 0;
-  B = 1;
-  O = 2;
-  AB = 3;
-};
 
 message HelloRequest {
   string name = 1;
