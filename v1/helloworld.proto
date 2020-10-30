@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package apis;
+package helloworld;
 
 import "blood_type.proto";
 
