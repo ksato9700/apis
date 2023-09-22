@@ -12,10 +12,16 @@ service Greeter {
   rpc sayHello(HelloRequest) returns (HelloReply) {}
 }
 
+message Extra {
+  string extra_message = 1;
+  int64 extra_code = 2;
+}
+
 message HelloRequest {
   string name = 1;
   int64 ver = 2;
   BloodType bloodType = 3;
+  optional Extra extra = 4;
 }
 
 message HelloReply { string message = 1; }
